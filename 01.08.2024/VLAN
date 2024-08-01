@@ -1,0 +1,43 @@
+VLAN: 
+Its mainly to eradicate the issues in the Broadcast Domain
+
+Broadcast Domain:
+Group of devices receive the broadcast address send by any one of the member.
+
+Dividing the Network:
+When we divide the network based on the department or any other requiremens we can implement the security policies for the different network.
+But when we broadcast,the switch broadcast to all the devices which they are connected even though we split the network by departments.
+
+VLAN:
+To solve this issue VLAN are created 
+It doesn't perform the Inter Vlan routing 
+It only sends the traffic through the router 
+
+About VLAN:
+There are about 5 VLAN default in a switch 
+VLAN 1,1002-1005
+When we need the total VLAN = 5 + No. of VLAN created 
+VLAN are created one for the one interface and the devices follow the interface belongs to the particular VLAN
+VLAN separate the network/logical device in Layer 2
+
+Access Port:
+One interface contains one VLAN
+
+Trunk Port:
+One interface contains the multiple VLAN 
+
+No. of devices in the case of Vlan process : PC + Switch+ Router 
+
+VLAN 1 
+VLAN 1002 : fddi default 
+VLAN 1003 : token ring default 
+VLAN 1004 : fddinet default 
+VLAN 1005 : trnet default 
+
+Commands : 
+
+#show vlan interface brief 
+sw(config)#interface range g1/0 - 3(no. of device)
+sw(config-if-range)#switchport access VLAN 20(assigning interface to the VLAN)
+sw(config)#vlan 20
+sw(config-VLAN)#name Lab
